@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <OutputType>exe</OutputType>
+    <IsPackable>false</IsPackable>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BenchmarkDotNet" Version="0.12.1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="**\*.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="*.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GraphQL.Tests\GraphQL.Tests.csproj" />
+  </ItemGroup>
+
+</Project>
